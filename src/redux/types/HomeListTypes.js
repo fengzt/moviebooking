@@ -1,0 +1,3 @@
+export const DANH_SACH_PHIM = 'DANH_SACH_PHIM';
+export const PHIM_DANG_CHIEU = "PHIM_DANG_CHIEU";
+export const PHIM_SAP_CHIEU = "PHIM_SAP_CHIEU";

@@ -1,0 +1,16 @@
+.slick-prev:before, .slick-next:before {
+    color: gray;
+    font-size: 25px;
+}
+
+.width-slick {
+    width: 100%!important;
+}
+
+.active-home-list {
+    @apply bg-gray-800 text-white;
+}
+
+.none-active-home-list {
+    @apply border border-black text-gray-800;
+}
