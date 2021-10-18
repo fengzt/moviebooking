@@ -1,0 +1,25 @@
+.rightSide {
+    box-shadow: -17px 0px 22px -17px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: -17px 0px 22px -17px rgba(0, 0, 0, 0.72);
+    -moz-box-shadow: -17px 0px 22px -17px rgba(0, 0, 0, 0.72);
+}
+
+.booking {
+    min-height: 30vh;
+}
+
+.trapezoid {
+    border-bottom: 40px solid rgba(0, 0, 0, 0.05);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    filter: drop-shadow(0px 80px 20px #f0f0f0);
+    -webkit-filter: drop-shadow(0px 80px 20px #f0f0f0);
+    -moz-filter: drop-shadow(0px 80px 20px #f0f0f0);
+}
+
+.rectangle {
+    height: 12px;
+    background: rgba(0, 0, 0, 0.72);
+}
+

@@ -81,7 +81,9 @@ export default function HomeMenu(props) {
                                     className="rounded-lg border px-1 py-2 text-center hover:bg-green-300"
                                     key={index}
                                   >
-                                    <NavLink to="/">
+                                    <NavLink
+                                      to={`/booking/${lichChieu.maLichChieu}`}
+                                    >
                                       {moment(
                                         lichChieu.ngayChieuGioChieu
                                       ).format("h: mm: ss a")}

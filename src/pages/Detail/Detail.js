@@ -20,6 +20,8 @@ import { NavLink } from "react-router-dom";
 // Tạo hiệu ứng vòng tròn quá trình
 // keyword: rating circle css
 
+let activeTab = "";
+
 function callback(key) {
   console.log(key);
 }
@@ -48,10 +50,11 @@ function Detail(props) {
     dispatch(action);
   }, [dispatch, props.match.params]);
 
-  const { TabPane } = Tabs;
-  // const classDetailActive =
+  // if ((key = activeKey)) {
+  //   activeTab = "border border-b-0 rounded-t-lg";
+  // }
 
-  //   return arrPhim.map((phim, index) => {
+  const { TabPane } = Tabs;
 
   return (
     <div
@@ -96,11 +99,11 @@ function Detail(props) {
               </div>
             </div>
             <div className="text-center">
-              <div class={`c100 p${filmDetail.danhGia * 10} big`}>
+              <div className={`c100 p${filmDetail.danhGia * 10} big`}>
                 <span style={{ color: "#fadb14" }}>{filmDetail.danhGia}</span>
-                <div class="slice">
-                  <div class="bar"></div>
-                  <div class="fill"></div>
+                <div className="slice">
+                  <div className="bar"></div>
+                  <div className="fill"></div>
                 </div>
               </div>
               <div
@@ -118,13 +121,19 @@ function Detail(props) {
         <div className="mx-80" style={{ minHeight: "300px" }}>
           <div
             style={{ minHeight: "300px" }}
-            className="flex -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center text-gray-800 mt-12 bg-white "
+            className="flex -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center text-gray-800 mt-12 bg-white"
           >
-            <Tabs onChange={callback}>
+            <Tabs
+              onChange={callback}
+              centered="true"
+              style={{ justifyContent: "center" }}
+            >
               <TabPane
                 style={{ minWidth: "500px" }}
                 tab={
-                  <div className="flex justify-center items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-600">
+                  <div
+                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-900 ${activeTab}`}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -186,7 +195,9 @@ function Detail(props) {
                                           className="rounded-lg border px-1 py-2 text-center hover:bg-green-300"
                                           key={index}
                                         >
-                                          <NavLink to="/">
+                                          <NavLink
+                                            to={`/booking/${lichChieu.maLichChieu}`}
+                                          >
                                             {moment(
                                               lichChieu.ngayChieuGioChieu
                                             ).format("DD.MM.YYYY h: mm: ss a")}
@@ -206,7 +217,9 @@ function Detail(props) {
               </TabPane>
               <TabPane
                 tab={
-                  <div className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 border border-b-0 rounded-t-lg text-coolGray-900">
+                  <div
+                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-900 ${activeTab}`}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -227,7 +240,9 @@ function Detail(props) {
               ></TabPane>
               <TabPane
                 tab={
-                  <div className="flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-600">
+                  <div
+                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-900 ${activeTab}`}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"

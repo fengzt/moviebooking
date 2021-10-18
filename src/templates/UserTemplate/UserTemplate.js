@@ -5,6 +5,11 @@ import { Route } from "react-router-dom";
 // https://codepen.io/PortSpasy/pen/GRJyJyZ
 
 export const UserTemplate = (props) => {
+  // Đảm bảo khi vào trang, luôn scroll ở đầu trang
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   // Nhận vào 3 thuộc tính: Component, exact, path
 
   const { Component, ...restProps } = props; //restProps: path và exact

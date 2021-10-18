@@ -11,7 +11,7 @@ export default function Footer(props) {
     _.pick(arrRap, ["tenHeThongRap", "logo"])
   );
 
-  console.log("abc", arrCumRap);
+  // console.log("abc", arrCumRap);
   return (
     <footer className="px-4 divide-y bg-gray-300 text-coolGray-800">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -47,7 +47,10 @@ export default function Footer(props) {
               {arrPhim.slice(0, 6).map((phim, index) => {
                 return (
                   <div className="pb-2" key={index}>
-                    <NavLink to="/" style={{ color: "#9a6563" }}>
+                    <NavLink
+                      to={`/detail/${phim.maPhim}`}
+                      style={{ color: "#9a6563" }}
+                    >
                       {phim.tenPhim}
                     </NavLink>
                     <br />

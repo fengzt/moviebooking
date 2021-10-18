@@ -2,6 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { QuanLyNguoiDungAction } from "../../redux/actions/QuanLyNguoiDungAction";
+import { NavLink } from "react-router-dom";
 
 export default function Login(props) {
   const dispatch = useDispatch();
@@ -10,6 +11,9 @@ export default function Login(props) {
       taiKhoan: "",
       matKhau: "",
     },
+
+    // Validation
+
     onSubmit: (values) => {
       console.log("values", values);
       const action = QuanLyNguoiDungAction(values);
@@ -28,11 +32,13 @@ export default function Login(props) {
       <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
         <div className="cursor-pointer flex items-center">
           <div>
-            <img
-              className="ml-4 w-16 h-16"
-              src="https://i.imgur.com/lC22izJ.png"
-              alt="logo"
-            />
+            <NavLink to="/">
+              <img
+                className="ml-4 w-16 h-16"
+                src="https://i.imgur.com/lC22izJ.png"
+                alt="logo"
+              />
+            </NavLink>
           </div>
           <div className="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold">
             Cyber Movie
@@ -64,12 +70,13 @@ export default function Login(props) {
                 Mật khẩu
               </div>
               <div>
-                <a
+                <NavLink
+                  to="/login"
                   className="text-xs font-display font-semibold text-indigo-600 hover:text-indigo-800
                                   cursor-pointer"
                 >
                   Quên mật khẩu ?
-                </a>
+                </NavLink>
               </div>
             </div>
             <input
@@ -92,9 +99,12 @@ export default function Login(props) {
           </div>
           <div className="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
             Bạn chưa có tài khoản ?{" "}
-            <a className="cursor-pointer text-indigo-600 hover:text-indigo-800">
+            <NavLink
+              to="/register"
+              className="cursor-pointer text-indigo-600 hover:text-indigo-800"
+            >
               Đăng ký
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

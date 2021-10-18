@@ -24,7 +24,12 @@ export const HomeTemplate = (props) => {
         height: window.innerHeight,
       });
     };
-  });
+  },[]);
+
+  // Đảm bảo khi vào trang, luôn scroll ở đầu trang
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  })
 
   const { Component, ...restProps } = props; //restProps: path và exact
 
