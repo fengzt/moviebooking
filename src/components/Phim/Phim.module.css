@@ -14,3 +14,19 @@
 .none-active-home-list {
     @apply border border-black text-gray-800;
 }
+
+.heightSlider {
+    height: 715px;
+}
+
+@media screen and (max-width: 768px) {
+    .heightSlider {
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .heightSlider {
+        height: 320px;
+    }
+}

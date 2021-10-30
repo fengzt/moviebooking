@@ -34,11 +34,12 @@ export const HomeTemplate = (props) => {
   const { Component, ...restProps } = props; //restProps: path và exact
 
   const renderComponent = (propsRoute) => {
-    if (state.width <= 782) {
+    if (state.width <= 768) {
       return <HeaderMobile />;
     }
     return <Header />;
   };
+
   return (
     <Route
       {...restProps}
@@ -47,7 +48,7 @@ export const HomeTemplate = (props) => {
         return (
           <Fragment>
             {renderComponent(propsRoute)}
-            <Component {...propsRoute} />
+            <Component {...propsRoute} state={state} />
 
             <Footer />
           </Fragment>

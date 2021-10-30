@@ -1,0 +1,23 @@
+.slick-dots-bottom {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.contentStyle {
+    height: 600px !important;
+    color: #fff !important;
+    line-height: 160px !important;
+    text-align: center !important;
+}
+
+@media screen and (max-width: 768px) {
+    .contentStyle {
+        height: 450px !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contentStyle {
+        height: 180px !important;
+    }
+}

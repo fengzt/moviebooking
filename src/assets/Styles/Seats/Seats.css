@@ -45,3 +45,80 @@
     background-color: rgba(196, 97, 97, 0.5);
     border: 3px solid rgb(80, 140, 90)
 }
+
+@media screen and (max-width: 1024px) {
+    .ghe {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background-color: rgb(110, 112, 90);
+        color: #fff;
+        margin: 10px 5px;
+        border-radius: 5px;
+        border: none;
+    }
+    /* Booked seat */
+    .gheDaDat {
+        background-color: rgb(206, 204, 204);
+        cursor: no-drop;
+    }
+    /* Booking seat */
+    .gheDangDat {
+        background-color: rgb(17, 182, 17) !important;
+        border: 5px solid rgb(110, 112, 90);
+    }
+    /* Vip seat */
+    .gheVip {
+        background-color: rgb(100, 30, 110);
+        border: 5px solid rgb(100, 30, 110);
+    }
+    /* Guest seat */
+    .gheKhachDat {
+        background-color: rgb(175, 47, 64);
+        cursor: no-drop;
+    }
+    /* User alread book seat */
+    .gheNguoiDungDat {
+        background-color: rgba(196, 97, 97, 0.5);
+        border: 3px solid rgb(80, 140, 90)
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Normal seat */
+    .ghe {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color: rgb(110, 112, 90);
+        color: #fff;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+    /* Booked seat */
+    .gheDaDat {
+        background-color: rgb(206, 204, 204);
+        cursor: no-drop;
+    }
+    /* Booking seat */
+    .gheDangDat {
+        background-color: rgb(17, 182, 17) !important;
+        border: 5px solid rgb(110, 112, 90);
+    }
+    /* Vip seat */
+    .gheVip {
+        background-color: rgb(100, 30, 110);
+        border: 5px solid rgb(100, 30, 110);
+    }
+    /* Guest seat */
+    .gheKhachDat {
+        background-color: rgb(175, 47, 64);
+        cursor: no-drop;
+    }
+    /* User alread book seat */
+    .gheNguoiDungDat {
+        background-color: rgba(196, 97, 97, 0.5);
+        border: 3px solid rgb(80, 140, 90)
+    }
+}

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Route } from "react-router-dom";
 
 // keyword: "tailwind login form template"

@@ -1,8 +1,11 @@
 import { ACCESS_TOKEN, USER_LOGIN } from "../../ulti/setting";
-import { ThongTinNguoiDung } from "../../_core/Models/ThongTinNguoiDung";
+import {
+  ThongTinNguoiDung,
+} from "../../_core/Models/ThongTinNguoiDung";
 import {
   DANG_NHAP_ACTION,
   DANG_XUAT,
+  LAY_DANH_SACH_NGUOI_DUNG,
   LAY_THONG_TIN_NGUOI_DUNG_ACTION,
 } from "../types/QuanLyNguoiDungTypes";
 
@@ -14,6 +17,7 @@ if (localStorage.getItem(USER_LOGIN)) {
 const stateDefault = {
   userLogin: user,
   thongTinNguoiDung: new ThongTinNguoiDung(),
+  arrNguoiDungDefault: [],
 };
 
 export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
@@ -36,7 +40,12 @@ export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
       localStorage.removeItem(ACCESS_TOKEN);
       return { ...state };
     }
-      
+
+    case LAY_DANH_SACH_NGUOI_DUNG: {
+      state.arrNguoiDungDefault = action.arrNguoiDungDefault;
+      return { ...state };
+    }
+
     default:
       return { ...state };
   }

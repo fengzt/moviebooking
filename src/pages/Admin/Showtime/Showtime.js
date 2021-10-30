@@ -51,7 +51,7 @@ const Showtime = (props) => {
     } catch (errors) {
       console.log("errors", errors.response?.content);
     }
-  }, []);
+  }, [state]);
 
   // ---------
   let thongTinPhim = {};
@@ -120,6 +120,7 @@ const Showtime = (props) => {
       <div className="flex mt-8">
         <img
           src={thongTinPhim.hinhAnh}
+          alt={thongTinPhim.hinhAnh}
           style={{ width: "300px", marginRight: "40px" }}
         />
 

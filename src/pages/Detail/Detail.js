@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Tabs } from "antd";
-// import { styleDetail } from "../../assets/Styles/Detail/Detail.css";
+import "../../assets/Styles/Detail/Detail.css";
 import "../../assets/Styles/Cirle/Circle.css";
 
 // https://github.com/tsamantanis/react-glassmorphism
@@ -16,11 +16,10 @@ import { HomeListAction } from "../../redux/actions/HomeListAction";
 import moment from "moment";
 import { Rate } from "antd";
 import { NavLink } from "react-router-dom";
+
 // http://circle.firchow.net/
 // Tạo hiệu ứng vòng tròn quá trình
 // keyword: rating circle css
-
-let activeTab = "";
 
 function callback(key) {
   console.log(key);
@@ -67,14 +66,14 @@ function Detail(props) {
       }}
     >
       <CustomCard
-        style={{ paddingTop: "150px", minHeight: "100vh" }}
+        className="customCard"
         effectColor="#C780FF" // required
         color="#f0f0f0" // default color is white
         blur={20} // default blur value is 10px
         borderRadius={0} // default border radius value is 10px
       >
         <div className="container">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="justify-self-end">
               <img
                 src={filmDetail.hinhAnh}
@@ -82,23 +81,23 @@ function Detail(props) {
                 style={{ height: "300px", width: "200px" }}
               />
             </div>
-            <div className="grid grid-cols-5 items-center">
-              <div className="col-span-4">
+            <div className="md:grid md:grid-cols-5 md:items-center">
+              <div className="col-span-4 text-gray-200">
                 <p>
                   Ngày chiếu:{" "}
                   {moment(filmDetail.ngayKhoiChieu).format("DD.MM.YYYY")}
                 </p>
-                <h3 className="text-2xl text-gray-200 font-bold">
+                <h3 className="text-2xl font-bold text-black md:text-gray-200">
                   {filmDetail.tenPhim}
                 </h3>
-                <p className=" text-gray-200 font-medium text-justify">
+                <p className="font-medium text-justify text-black md:text-gray-200">
                   {filmDetail.moTa?.length > 150
                     ? filmDetail.moTa.substr(0, 150) + "..."
                     : filmDetail.moTa}
                 </p>
               </div>
             </div>
-            <div className="text-center">
+            <div className="hidden lg:block lg:text-center">
               <div className={`c100 p${filmDetail.danhGia * 10} big`}>
                 <span style={{ color: "#fadb14" }}>{filmDetail.danhGia}</span>
                 <div className="slice">
@@ -118,22 +117,16 @@ function Detail(props) {
         </div>
 
         {/* tab information */}
-        <div className="mx-80" style={{ minHeight: "300px" }}>
-          <div
-            style={{ minHeight: "300px" }}
-            className="flex -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center text-gray-800 mt-12 bg-white"
-          >
+        <div className="tabInformation md:mx-40 lg:mx-80">
+          <div className="tabContent flex overflow-x-auto overflow-y-hidden sm:justify-center text-gray-800 mt-12 bg-white lg:-mx-4">
             <Tabs
               onChange={callback}
               centered="true"
-              style={{ justifyContent: "center" }}
+              className="justify-center"
             >
               <TabPane
-                style={{ minWidth: "500px" }}
                 tab={
-                  <div
-                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-900 ${activeTab}`}
-                  >
+                  <div className="flex items-center flex-shrink-0 py-3 space-x-2 text-coolGray-900 px-0 flex-col mx-4 lg:flex-row lg:px-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -168,10 +161,10 @@ function Detail(props) {
                         {cumRap.cumRapChieu?.map((rap, index) => {
                           return (
                             <div
-                              className="flex mb-6 overflow-hidden items-center"
+                              className="flex mb-6 overflow-hidden items-center px-2"
                               key={index}
                             >
-                              <div className="mr-4 w-20 h-24">
+                              <div className="w-20 h-20 mr-2 lg:w-20 lg:h-24 lg:mr-4">
                                 <img
                                   src={rap.hinhAnh}
                                   alt={rap.hinhAnh}
@@ -186,7 +179,7 @@ function Detail(props) {
                               <div>
                                 <h3 className="text-xl">{rap.tenCumRap}</h3>
                                 <p>{rap.diaChi}</p>
-                                <div className="grid grid-cols-3 gap-3">
+                                <div className="grid gap-3 grid-cols-2 lg:grid-cols-3">
                                   {rap.lichChieuPhim
                                     ?.slice(0, 6)
                                     .map((lichChieu, index) => {
@@ -215,11 +208,10 @@ function Detail(props) {
                   })}
                 </Tabs>
               </TabPane>
+
               <TabPane
                 tab={
-                  <div
-                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-900 ${activeTab}`}
-                  >
+                  <div className="flex items-center flex-shrink-0 py-3 space-x-2 text-coolGray-900 px-0 flex-col mx-4 lg:flex-row lg:px-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -237,12 +229,17 @@ function Detail(props) {
                   </div>
                 }
                 key="2"
-              ></TabPane>
+              >
+                <div className="container">
+                  <p className=" text-black font-medium text-justify">
+                    {filmDetail.moTa}
+                  </p>
+                </div>
+              </TabPane>
+
               <TabPane
                 tab={
-                  <div
-                    className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 text-coolGray-900 ${activeTab}`}
-                  >
+                  <div className="flex items-center flex-shrink-0 py-3 space-x-2 text-coolGray-900 px-0 flex-col mx-4 lg:flex-row lg:px-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -259,7 +256,23 @@ function Detail(props) {
                   </div>
                 }
                 key="3"
-              ></TabPane>
+              >
+                <div className="container text-center">
+                  <div className={`c100 p${filmDetail.danhGia * 10} big`}>
+                    <span style={{ color: "#fadb14" }}>
+                      {filmDetail.danhGia}
+                    </span>
+                    <div className="slice">
+                      <div className="bar"></div>
+                      <div className="fill"></div>
+                    </div>
+                  </div>
+                  <div className="danhGia absolute font-bold lg:hidden">
+                    <p className="m-0">Đánh giá</p>
+                    <Rate />
+                  </div>
+                </div>
+              </TabPane>
             </Tabs>
           </div>
         </div>

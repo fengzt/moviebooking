@@ -1,4 +1,51 @@
-.tab-detail-active{
-    font-size: 30px;
-    color: red;
+.customCard {
+    padding: 150px 0px 40px 0px !important;
+    min-height: 100vh !important;
+}
+
+.tabInformation, .tabContent {
+    min-height: 400px;
+}
+
+.tabPane {
+    min-height: 500px;
+}
+
+.ant-tabs {
+    margin: 0 auto !important;
+}
+
+.ant-tabs-tabpane .c100.big {
+    margin: 0 0 0 3rem !important;
+}
+
+@media screen and (max-width: 992px) {
+    .danhGia {
+        bottom: 3.5rem;
+        right: 23.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .c100.big {
+        margin: 0 0 0 3.5rem !important;
+    }
+    .danhGia {
+        bottom: 8rem;
+        right: 19rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .danhGia {
+        bottom: 3rem;
+        right: 9rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .danhGia {
+        bottom: 3rem;
+        right: 7.5rem;
+    }
 }

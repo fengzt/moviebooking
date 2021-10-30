@@ -13,7 +13,7 @@ import { HomeListAction } from "./HomeListAction";
 export const QuanLyPhimAction = (phim) => {
   return async (dispatch) => {
     try {
-      const result = await themPhimUploadHinh(phim);
+      await themPhimUploadHinh(phim);
       alert("Thêm phim thành công !");
       history.push('/admin/films')
       // console.log("themPhim", result);

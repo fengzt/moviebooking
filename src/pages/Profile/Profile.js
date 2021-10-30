@@ -1,10 +1,9 @@
 import { CustomCard } from "@tsamantanis/react-glassmorphism";
 import React from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Redirect } from "react-router";
-import { history } from "../../App";
 import { USER_LOGIN } from "../../ulti/setting";
+import styleProfile from "./Profile.module.css"
 
 export default function Profile(props) {
   const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
@@ -12,15 +11,7 @@ export default function Profile(props) {
     return <Redirect to="/login"/>;
   }
   return (
-    <div
-      style={{
-        minHeight: "60vh",
-        backgroundColor: "gray",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className={`${styleProfile["common"]}`}>
       <CustomCard
         style={{ paddingTop: "150px", minHeight: "60vh" }}
         effectColor="#C780FF" // required
@@ -29,26 +20,26 @@ export default function Profile(props) {
         borderRadius={0} // default border radius value is 10px
       >
         <div className="container">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
             <div className="justify-self-end">
               <img
                 src="https://picsum.photos/200/200"
                 alt="..."
-                style={{ height: "290px", width: "200px" }}
+                className={`${styleProfile["ava"]}`}
               />
             </div>
-            <div className="grid grid-cols-5 items-center">
+            <div className="text-center sm:grid sm:grid-cols-5 sm:items-center">
               <div className="col-span-4">
-                <h3 className="text-2xl text-gray-200 font-bold">
+                <h3 className="text-gray-200 font-bold text-lg sm:text-2xl sm:text-justify">
                   Xin chào {userLogin.taiKhoan} !
                 </h3>
-                <p className=" text-gray-200 font-medium text-justify">
+                <p className=" text-gray-200 font-medium sm:text-justify">
                   Họ tên: {userLogin.hoTen}
                 </p>
-                <p className=" text-gray-200 font-medium text-justify">
+                <p className=" text-gray-200 font-medium sm:text-justify">
                   Email: {userLogin.email}
                 </p>
-                <p className=" text-gray-200 font-medium text-justify">
+                <p className=" text-gray-200 font-medium sm:text-justify">
                   Số điện thoại: {userLogin.soDT}
                 </p>
               </div>

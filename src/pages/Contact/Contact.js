@@ -11,7 +11,7 @@ export default function Contact(props) {
         </div>
         <img
           src="https://mambaui.com/assets/svg/doodle.svg"
-          alt
+          alt="..."
           className="p-6 h-52 md:h-64"
         />
       </div>

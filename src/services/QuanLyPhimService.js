@@ -7,7 +7,7 @@ export class QuanLyPhimService {
   };
 
   layDanhSachPhim = (tenPhim = '') => {
-    if (tenPhim != '') {
+    if (tenPhim !== '') {
       return http.get(
         `/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GROUP_ID}&tenPhim=${tenPhim}`
       );

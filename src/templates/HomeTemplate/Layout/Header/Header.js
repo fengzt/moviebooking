@@ -6,7 +6,7 @@ import { history } from "../../../../App";
 import { useTranslation } from "react-i18next";
 
 import { Select } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { USER_LOGIN } from "../../../../ulti/setting";
 import { DANG_XUAT } from "../../../../redux/types/QuanLyNguoiDungTypes";
 
@@ -66,7 +66,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed w-full z-10 p-4 bg-black bg-opacity-20 text-white">
+    <header className="fixed w-full z-10 p-4 bg-gray-800 text-white">
       <div className="container flex justify-between items-center h-16 mx-auto">
         <NavLink
           to="/"

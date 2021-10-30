@@ -24,6 +24,7 @@ import { LayThongTinNguoiDungAction } from "../../redux/actions/QuanLyNguoiDungA
 import { connection } from "../..";
 import { DANG_XUAT } from "../../redux/types/QuanLyNguoiDungTypes";
 import { history } from "../../App";
+import { UpOutlined } from "@ant-design/icons";
 
 // filter shadow css
 
@@ -89,8 +90,7 @@ export function Booking(props) {
       clearGhe();
       window.removeEventListener("beforeunload", clearGhe);
     };
-    
-  }, [dispatch, props.match.params.id]);
+  }, [dispatch, props.match.params.id, userLogin.taiKhoan]);
 
   const clearGhe = (event) => {
     // Gọi từ backEnd => dùng invoke
@@ -164,14 +164,22 @@ export function Booking(props) {
     });
   };
 
+  // ScrollToTop
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="min-h-screen">
       <div className="grid grid-cols-12">
-        <div className="col-span-9 mx-12 mt-2">
+        <div className="mt-2 ml-0 mr-6 col-span-9 md:col-span-10 lg:mx-12 lg:col-span-9">
           {/* Div cho màn hình */}
           <div className="">
             <div className={`${style["rectangle"]} w-full`}></div>
-            <div className={`${style["trapezoid"]} w-full text-center`}>
+            <div className={`${style["trapezoid"]} w-full text-center md:mb-4`}>
               <p className="pt-2 text-gray-400 font-bold tracking-widest">
                 MÀN HÌNH
               </p>
@@ -182,17 +190,23 @@ export function Booking(props) {
           <div className="text-center">{renderGhe()}</div>
 
           {/* div chú thích */}
-          <div className="my-2 text-center mx-12">
+          <div className="hidden md:block md:my-4 md:text-center xl:mx-12">
             <table className="table-fixed min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-200 p-5">
                 <tr>
-                  <th className="w-1/7">Ghế đã đặt</th>
-                  <th className="w-1/7">Ghế thường</th>
-                  <th className="w-1/7">Ghế Vip</th>
-                  <th className="w-1/7">Ghế {userLogin.hoTen} đặt</th>
-                  <th className="w-1/7">Ghế Khách đặt</th>
-                  <th className="w-1/7">Ghế thường đang đặt</th>
-                  <th className="w-1/7">Ghế Vip đang đặt</th>
+                  <th className="w-1/7 font-bold text-base">Ghế đã đặt</th>
+                  <th className="w-1/7 font-bold text-base">Ghế thường</th>
+                  <th className="w-1/7 font-bold text-base">Ghế Vip</th>
+                  <th className="w-1/7 font-bold text-base">
+                    Ghế {userLogin.hoTen} đặt
+                  </th>
+                  <th className="w-1/7 font-bold text-base">Ghế Khách đặt</th>
+                  <th className="w-1/7 font-bold text-base">
+                    Ghế thường đang đặt
+                  </th>
+                  <th className="w-1/7 font-bold text-base">
+                    Ghế Vip đang đặt
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -248,9 +262,12 @@ export function Booking(props) {
           </div>
         </div>
 
-        <div className={`${style["rightSide"]} col-span-3`}>
-          <div className="mx-3">
-            <p className="text-center text-green-500 font-bold mt-3 text-3xl">
+        {/* Div thông tin bên phải */}
+        <div
+          className={`${style["rightSide"]} col-span-3 md:col-span-2 lg:col-span-3`}
+        >
+          <div className="mx-1">
+            <p className="text-center text-green-500 font-bold mt-3 text-base md:text-3xl">
               {danhSachGheDangDat
                 .reduce((tongTien, ghe) => {
                   return (tongTien += ghe.giaVe);
@@ -260,9 +277,13 @@ export function Booking(props) {
             </p>
             <hr />
             <div className="mt-3">
-              <p className="text-xl font-bold">{thongTinPhim.tenPhim}</p>
-              <p>Địa điểm: {thongTinPhim.tenCumRap}</p>
-              <p>
+              <p className="font-bold text-base md:text-xl">
+                {thongTinPhim.tenPhim}
+              </p>
+              <p className="text-xs font-semibold md:text-base">
+                Địa điểm: {thongTinPhim.tenCumRap}
+              </p>
+              <p className="text-xs font-semibold md:text-base">
                 Ngày chiếu: {thongTinPhim.ngayChieu} - {thongTinPhim.gioChieu}{" "}
                 || {thongTinPhim.tenRap}
               </p>
@@ -274,9 +295,9 @@ export function Booking(props) {
                 <thead>
                   <tr>
                     <th className="text-left">
-                      <p className="text-red-500">Ghế</p>
+                      <p className="text-xs font-semibold text-red-500">Ghế</p>
                     </th>
-                    <th className="text-right">
+                    <th className="text-right text-xs font-semibold lg:text-base">
                       <p>
                         {" "}
                         {danhSachGheDangDat
@@ -294,8 +315,10 @@ export function Booking(props) {
                   {_.sortBy(danhSachGheDangDat, ["maGhe"]).map((ghe, index) => {
                     return (
                       <tr key={index}>
-                        <td className="text-left">{ghe.stt}</td>
-                        <td className="text-right">
+                        <td className="text-left text-xs lg:text-base">
+                          {ghe.stt}
+                        </td>
+                        <td className="text-right text-xs lg:text-base">
                           {ghe.giaVe.toLocaleString()} đ
                         </td>
                       </tr>
@@ -306,15 +329,27 @@ export function Booking(props) {
             </div>
             <hr />
             <div className="mt-3">
-              <p className="">Email</p>
-              <p>{userLogin.email}</p>
+              <p className="text-xs font-semibold lg:text-base">Email</p>
+              <p className="text-xs font-semibold lg:text-base">
+                {userLogin.email}
+              </p>
             </div>
             <hr />
             <div className="mt-3">
-              <p className="">Phone</p>
-              <p>{userLogin.soDT}</p>
+              <p className="text-xs font-semibold lg:text-base">Phone</p>
+              <p className="text-xs font-semibold lg:text-base">
+                {userLogin.soDT}
+              </p>
             </div>
             <hr />
+            <div className="text-xs font-semibold mt-4 md:hidden">
+              <span className="text-red-500">Lưu ý:</span>
+              <br />
+              <p className="text-justify">
+                Vì kích thước màn hình nhỏ, nên vị trí ghế VIP bị thay đổi so
+                với thực tế.
+              </p>
+            </div>
           </div>
           <div className={`${style["booking"]} mb-0 flex flex-col justify-end`}>
             <button
@@ -331,8 +366,55 @@ export function Booking(props) {
               </div>
             </button>
           </div>
+
+          {/* Div chú thích mobile */}
+          <div className="mt-12 mx-2 md:hidden">
+            <button className="ghe gheDaDat" style={{ cursor: "auto" }}>
+              <CloseCircleOutlined style={{ fontSize: "1.25rem" }} />
+            </button>
+            <p className="w-1/7 text-xs font-bold md:text-base">Ghế đã đặt</p>
+
+            <button className="ghe" style={{ cursor: "auto" }}></button>
+            <p className="w-1/7 text-xs font-bold md:text-base">Ghế thường</p>
+
+            <button className="ghe gheVip" style={{ cursor: "auto" }}></button>
+            <p className="w-1/7 text-xs font-bold md:text-base">Ghế Vip</p>
+
+            <button className="ghe gheNguoiDungDat" style={{ cursor: "auto" }}>
+              <UserOutlined style={{ fontSize: "1.25rem" }} />
+            </button>
+            <p className="w-1/7 text-xs font-bold md:text-base">
+              Ghế {userLogin.hoTen} đặt
+            </p>
+
+            <button className="ghe gheKhachDat" style={{ cursor: "auto" }}>
+              <MehOutlined style={{ fontSize: "1.25rem" }} />
+            </button>
+            <p className="w-1/7 text-xs font-bold md:text-base">
+              Ghế Khách đặt
+            </p>
+
+            <button
+              className="ghe gheDangDat"
+              style={{ cursor: "auto" }}
+            ></button>
+            <p className="w-1/7 text-xs font-bold md:text-base">
+              Ghế thường đang đặt
+            </p>
+
+            <button
+              className="ghe gheVip gheDangDat"
+              style={{ cursor: "auto" }}
+            ></button>
+            <p className="w-1/7 text-xs font-bold md:text-base">
+              Ghế Vip đang đặt
+            </p>
+          </div>
         </div>
       </div>
+      <a className={`${style["scroll-to-top"]} md:hidden`} onClick={scrollTop}>
+        <UpOutlined />
+      </a>
     </div>
   );
 }
@@ -396,7 +478,7 @@ export function ResultBooking(props) {
   return (
     <div className="mt-5 ml-5">
       <section className="text-gray-600 body-font">
-        <div className="container p-5 mx-auto">
+        <div className="container mx-auto pl-0 py-5 pr-5 md:p-5">
           <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-purple-900">
               Lịch sử đặt vé khách hàng
@@ -428,11 +510,11 @@ export function BookingPage(props) {
       type: CHUYEN_TAB_FLEXIBLE,
       number: "1",
     });
-  }, []);
+  }, [dispatch]);
 
   const operations = (
     <Fragment>
-      <div className="pr-24 text-center">
+      <div className="text-center md:pr-12 lg:pr-24 ">
         <NavLink to="/profile">
           <img
             src="https://picsum.photos/200/200"

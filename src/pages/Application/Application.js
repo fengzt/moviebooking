@@ -6,12 +6,12 @@ export default function Application(props) {
       <section className="bg-coolGray-100 text-coolGray-800">
         <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
           <a
-            href="#"
+            href="/application"
             className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-coolGray-50"
           >
             <img
               src="https://source.unsplash.com/random/480x360"
-              alt
+              alt="..."
               className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 bg-coolGray-500"
             />
             <div className="p-6 space-y-2 lg:col-span-5">
@@ -29,13 +29,14 @@ export default function Application(props) {
           </a>
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <a
-              href="#"
+              href="/application"
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50"
             >
               <img
                 role="presentation"
                 className="object-cover w-full rounded h-44 bg-coolGray-500"
                 src="https://source.unsplash.com/random/481x361"
+                alt="..."
               />
               <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
@@ -53,13 +54,14 @@ export default function Application(props) {
               </div>
             </a>
             <a
-              href="#"
+              href="/application"
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50"
             >
               <img
                 role="presentation"
                 className="object-cover w-full rounded h-44 bg-coolGray-500"
                 src="https://source.unsplash.com/random/482x362"
+                alt="..."
               />
               <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
@@ -77,13 +79,14 @@ export default function Application(props) {
               </div>
             </a>
             <a
-              href="#"
+              href="/application"
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50"
             >
               <img
                 role="presentation"
                 className="object-cover w-full rounded h-44 bg-coolGray-500"
                 src="https://source.unsplash.com/random/483x363"
+                alt="..."
               />
               <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
@@ -101,13 +104,14 @@ export default function Application(props) {
               </div>
             </a>
             <a
-              href="#"
+              href="/application"
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50 hidden sm:block"
             >
               <img
                 role="presentation"
                 className="object-cover w-full rounded h-44 bg-coolGray-500"
                 src="https://source.unsplash.com/random/484x364"
+                alt="..."
               />
               <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
@@ -125,13 +129,14 @@ export default function Application(props) {
               </div>
             </a>
             <a
-              href="#"
+              href="/application"
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50 hidden sm:block"
             >
               <img
                 role="presentation"
                 className="object-cover w-full rounded h-44 bg-coolGray-500"
                 src="https://source.unsplash.com/random/485x365"
+                alt="..."
               />
               <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
@@ -149,13 +154,14 @@ export default function Application(props) {
               </div>
             </a>
             <a
-              href="#"
+              href="/application"
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50 hidden sm:block"
             >
               <img
                 role="presentation"
                 className="object-cover w-full rounded h-44 bg-coolGray-500"
                 src="https://source.unsplash.com/random/486x366"
+                alt="..."
               />
               <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">

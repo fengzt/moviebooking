@@ -19,8 +19,7 @@ export default function PhimFlip(props) {
                 e.target.onError = null;
                 e.target.src = "https://picsum.photos/200/200";
               }}
-              alt="Avatar"
-              style={{ width: 275, height: 300 }}
+              alt={phim.hinhAnh}
             />
           </div>
           <div
@@ -38,7 +37,6 @@ export default function PhimFlip(props) {
                   e.target.src = "https://picsum.photos/200/200";
                 }}
                 alt={phim.hinhAnh}
-                style={{ width: 275, height: 300 }}
               />
             </div>
             <div
@@ -50,16 +48,16 @@ export default function PhimFlip(props) {
             >
               <div>
                 <div className="rounded-full cursor-pointer">
-                  <PlayCircleOutlined style={{ fontSize: "50px" }} />
+                  <PlayCircleOutlined className="playCircle" />
                 </div>
-                <div className="text-2xl mt-2 font-bold">{phim.tenPhim}</div>
+                <div className="mt-2 font-bold text-sm lg:text-2xl">{phim.tenPhim}</div>
               </div>
             </div>
           </div>
         </div>
         <NavLink
           to={`/detail/${phim.maPhim}`}
-          className="block bg-orange-400 text-center cursor-pointer py-2 bg-indigo-300 my-2 text-success-50 font-bold"
+          className="block bg-orange-400 text-center cursor-pointer bg-indigo-300 text-success-50 font-bold my-2 py-2 text-xs md:text-sm"
         >
           Đặt vé ngay !
         </NavLink>

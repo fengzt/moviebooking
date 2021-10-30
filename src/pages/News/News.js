@@ -14,12 +14,12 @@ export default function News(props) {
                     Exclusive
                   </span>
                 </h3>
-                <a href="#" className="font-serif hover:underline">
+                <a href="/news" className="font-serif hover:underline">
                   Donec sed elit quis odio mollis dignissim eget et nulla.
                 </a>
                 <p className="text-xs text-coolGray-600">
                   47 minutes ago by
-                  <a href="#" className="hover:underline text-violet-600">
+                  <a href="/news" className="hover:underline text-violet-600">
                     Leroy Jenkins
                   </a>
                 </p>
@@ -31,12 +31,12 @@ export default function News(props) {
                     Exclusive
                   </span>
                 </h3>
-                <a href="#" className="font-serif hover:underline">
+                <a href="/news" className="font-serif hover:underline">
                   Ut fermentum nunc quis ipsum laoreet condimentum.
                 </a>
                 <p className="text-xs text-coolGray-600">
                   2 hours ago by
-                  <a href="#" className="hover:underline text-violet-600">
+                  <a href="/news" className="hover:underline text-violet-600">
                     Leroy Jenkins
                   </a>
                 </p>
@@ -48,12 +48,12 @@ export default function News(props) {
                     Exclusive
                   </span>
                 </h3>
-                <a href="#" className="font-serif hover:underline">
+                <a href="/news" className="font-serif hover:underline">
                   Nunc nec ipsum lobortis, pulvinar neque sed.
                 </a>
                 <p className="text-xs text-coolGray-600">
                   4 hours ago by
-                  <a href="#" className="hover:underline text-violet-600">
+                  <a href="/news" className="hover:underline text-violet-600">
                     Leroy Jenkins
                   </a>
                 </p>
@@ -64,7 +64,10 @@ export default function News(props) {
               <div className="flex w-full h-1 bg-opacity-10 bg-violet-600">
                 <div className="w-1/2 h-full bg-violet-600" />
               </div>
-              <a href="#" className="flex items-center justify-between w-full">
+              <a
+                href="/news"
+                className="flex items-center justify-between w-full"
+              >
                 <span className="text-xs font-bold tracking-wider uppercase">
                   See more exclusives
                 </span>
@@ -92,7 +95,7 @@ export default function News(props) {
             <span className="absolute px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6 border-violet-600 text-coolGray-100">
               paris, france
             </span>
-            <a className="flex flex-col items-center justify-end p-6 text-center sm:p-8 group via-transparent flex-grow-1 bg-gradient-to-b from-coolGray-900 to-coolGray-900">
+            <a href="/news" className="flex flex-col items-center justify-end p-6 text-center sm:p-8 group via-transparent flex-grow-1 bg-gradient-to-b from-coolGray-900 to-coolGray-900">
               <span className="flex items-center mb-4 space-x-2 text-violet-600">
                 <span className="relative flex-shrink-0 w-2 h-2 rounded-full bg-violet-600">
                   <span className="absolute flex-shrink-0 w-3 h-3 rounded-full -left-1 -top-1 animate-ping bg-violet-600" />
@@ -100,7 +103,7 @@ export default function News(props) {
                 <span className="text-sm font-bold">Live</span>
               </span>
               <h1
-                href="#"
+                href="/news"
                 className="font-serif text-2xl font-semibold group-hover:underline text-coolGray-100"
               >
                 Morbi mattis justo est, ac consectetur dui eleifend vitae. Donec
@@ -126,18 +129,18 @@ export default function News(props) {
             <div className="flex flex-col divide-y divide-coolGray-300">
               <div className="flex px-1 py-4">
                 <img
-                  alt
+                  alt="..."
                   className="flex-shrink-0 object-cover w-20 h-20 mr-4 bg-coolGray-500"
                   src="https://source.unsplash.com/random/244x324"
                 />
                 <div className="flex flex-col flex-grow">
-                  <a href="#" className="font-serif hover:underline">
+                  <a href="/news" className="font-serif hover:underline">
                     Aenean ac tristique lorem, ut mollis dui.
                   </a>
                   <p className="mt-auto text-xs text-coolGray-600">
                     5 minutes ago
                     <a
-                      href="#"
+                      href="/news"
                       className="block text-blue-400 lg:ml-2 lg:inline hover:underline"
                     >
                       Politics
@@ -147,18 +150,18 @@ export default function News(props) {
               </div>
               <div className="flex px-1 py-4">
                 <img
-                  alt
+                  alt="..."
                   className="flex-shrink-0 object-cover w-20 h-20 mr-4 bg-coolGray-500"
                   src="https://source.unsplash.com/random/245x325"
                 />
                 <div className="flex flex-col flex-grow">
-                  <a href="#" className="font-serif hover:underline">
+                  <a href="/news" className="font-serif hover:underline">
                     Nulla consectetur efficitur.
                   </a>
                   <p className="mt-auto text-xs text-coolGray-600">
                     14 minutes ago
                     <a
-                      href="#"
+                      href="/news"
                       className="block text-blue-400 lg:ml-2 lg:inline hover:underline"
                     >
                       Sports
@@ -168,18 +171,18 @@ export default function News(props) {
               </div>
               <div className="flex px-1 py-4">
                 <img
-                  alt
+                  alt="..."
                   className="flex-shrink-0 object-cover w-20 h-20 mr-4 bg-coolGray-500"
                   src="https://source.unsplash.com/random/246x326"
                 />
                 <div className="flex flex-col flex-grow">
-                  <a href="#" className="font-serif hover:underline">
+                  <a href="/news" className="font-serif hover:underline">
                     Vitae semper augue purus tincidunt libero.
                   </a>
                   <p className="mt-auto text-xs text-coolGray-600">
                     22 minutes ago
                     <a
-                      href="#"
+                      href="/news"
                       className="block text-blue-400 lg:ml-2 lg:inline hover:underline"
                     >
                       World
@@ -189,18 +192,18 @@ export default function News(props) {
               </div>
               <div className="flex px-1 py-4">
                 <img
-                  alt
+                  alt="..."
                   className="flex-shrink-0 object-cover w-20 h-20 mr-4 bg-coolGray-500"
                   src="https://source.unsplash.com/random/247x327"
                 />
                 <div className="flex flex-col flex-grow">
-                  <a href="#" className="font-serif hover:underline">
+                  <a href="/news" className="font-serif hover:underline">
                     Suspendisse potenti.
                   </a>
                   <p className="mt-auto text-xs text-coolGray-600">
                     37 minutes ago
                     <a
-                      href="#"
+                      href="/news"
                       className="block text-blue-400 lg:ml-2 lg:inline hover:underline"
                     >
                       Business

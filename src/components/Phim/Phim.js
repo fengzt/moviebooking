@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
-import { PHIM_DANG_CHIEU, PHIM_SAP_CHIEU } from "../../redux/types/HomeListTypes";
+import {
+  PHIM_DANG_CHIEU,
+  PHIM_SAP_CHIEU,
+} from "../../redux/types/HomeListTypes";
 import styleSlick from "./Phim.module.css";
 import PhimFlip from "./PhimFlip";
 
@@ -30,6 +33,18 @@ function SamplePrevArrow(props) {
 const Phim = (props) => {
   const dispatch = useDispatch();
   const { dangChieu, sapChieu } = useSelector((state) => state.HomeListReducer);
+
+  const { state } = props;
+
+  const numberSlidesToShow = () => {
+    if (state.width <= 576) {
+      return 2;
+    } else if (state.width <= 1024) {
+      return 3;
+    } else {
+      return 4;
+    }
+  };
 
   const activeDangChieu =
     dangChieu === true
@@ -103,7 +118,7 @@ const Phim = (props) => {
     centerMode: true,
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 4,
+    slidesToShow: numberSlidesToShow(),
     speed: 500,
     rows: 1,
     slidesPerRow: 2,
@@ -113,24 +128,28 @@ const Phim = (props) => {
   };
   return (
     <div>
-      <button
-        className={`${activeDangChieu} px-8 py-3 font-semibold rounded`}
-        onClick={() => {
-          dispatch({ type: PHIM_DANG_CHIEU });
-        }}
-      >
-        PHIM ĐANG CHIẾU
-      </button>
-      <button
-        onClick={() => {
-          dispatch({ type: PHIM_SAP_CHIEU});
-        }}
-        className={`${activeSapChieu} px-8 py-3 font-semibold ml-3 rounded`}
-      >
-        PHIM SẮP CHIẾU
-      </button>
+      <div className="flex">
+        <button
+          className={`${activeDangChieu} font-semibold rounded px-4 py-1 lg:px-8 lg:py-3`}
+          onClick={() => {
+            dispatch({ type: PHIM_DANG_CHIEU });
+          }}
+        >
+          PHIM ĐANG CHIẾU
+        </button>
+        <button
+          onClick={() => {
+            dispatch({ type: PHIM_SAP_CHIEU });
+          }}
+          className={`${activeSapChieu} font-semibold ml-3 rounded px-4 py-1 lg:px-8 lg:py-3`}
+        >
+          PHIM SẮP CHIẾU
+        </button>
+      </div>
 
-      <Slider {...settings} style={{height:'715px'}}>{renderPhim()}</Slider>
+      <Slider {...settings} className={`${styleSlick["heightSlider"]}`}>
+        {renderPhim()}
+      </Slider>
     </div>
   );
 };

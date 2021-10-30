@@ -1,0 +1,21 @@
+.common {
+    min-height: 60vh;
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ava {
+    height: 290px;
+    width: 200px;
+}
+
+@media screen and (max-width: 568px) {
+    .ava {
+        height: 220px;
+        width: 200px;
+        border-radius: 20px;
+        margin: 0 auto;
+    }
+}

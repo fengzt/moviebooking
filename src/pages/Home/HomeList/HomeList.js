@@ -16,12 +16,12 @@ export default function HomeList(props) {
   // console.log(arrPhim)
 
   const renderHomeList = () => {
-    return <Phim arrPhim={arrPhim} />;
+    return <Phim arrPhim={arrPhim} state={props.state} />;
   };
 
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 mx-auto pt-6 pb-20 lg:pt-12 lg:pb-24">
         {renderHomeList()}
       </div>
     </section>
